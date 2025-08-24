@@ -44,17 +44,3 @@ foreach (var c in payload.Customers ?? new())
     // Formatowanie raportu (też tutaj)
     Console.WriteLine($"{c.Id};{c.Plan};{c.Usage};{price:F2}");
 }
-
-// Modele danych
-record Root
-{
-    public string BillingPeriod { get; init; } = string.Empty;
-    public List<Customer> Customers { get; init; } = new();
-}
-
-record Customer
-{
-    public string Id { get; init; } = string.Empty;
-    public string Plan { get; init; } = string.Empty;
-    public int Usage { get; init; }
-}
